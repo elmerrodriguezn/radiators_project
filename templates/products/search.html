@@ -1,7 +1,40 @@
 {% extends 'base.html' %}
 
-{% block title %} | Welcome {% endblock %}
-
 {% block content %}
-
-{% endblock %}
+<!-- Listings -->
+<section id="listings" class="py-5">
+    <div class="container">
+        <h3 class="text-center mb-3">Últimos radiadores</h3>
+        <div class="row">
+            {% if products %}
+            {% for product in products %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card listing-preview">
+                    <div class="card-body">
+                        <div class="listing-heading text-center">
+                            <h4 class="text-primary">{{ product.name }}</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item text-secondary">
+                                    NUMERO DE PARTE MESABI:
+                                    <span class="float-right">{{ product.default_code }}</span>
+                                </li>
+                                <li class="list-group-item text-secondary">
+                                    NUMERO DE PARTE OEM:
+                                    <span class="float-right">{{ product.x_studio_field_QlEui }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <a href="{% url 'single' product.default_code %}" class="btn btn-primary btn-block">Cotizar</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="col-md-12">
+                <p>No Listings Available</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endblock %}

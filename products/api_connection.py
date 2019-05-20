@@ -54,7 +54,7 @@ def context_limit():
                 'x_studio_field_OaF3K', '=', True
             ]
         ]],
-        {'fields': ['name', 'default_code', 'x_studio_field_QlEui'], 'limit': 6 })
+        {'fields': ['name', 'default_code', 'x_studio_field_QlEui', 'create_date'], 'limit': 6, 'order': 'create_date'  })
 
     data_limit = json.dumps(raw_limit)
     data_limit = json.loads(data_limit)
@@ -92,3 +92,34 @@ def context_detail(default_code):
     }
 
     return context_detail
+
+def context_search(q):
+    raw_search= models.execute_kw(
+    db,
+    uid,
+    password,
+   'product.template', 'search_read',
+    [[
+        [
+            'type', '=', 'product'
+        ],
+        [
+            'categ_id', '=', 139
+        ],
+        [
+            'x_studio_field_OaF3K', '=', True
+        ],
+        [
+            'default_code', 'ilike', q
+        ],
+    ]],
+    {'fields': ['name', 'default_code', 'x_studio_field_QlEui'], 'limit': 6 })
+
+    data_search = json.dumps(raw_search)
+    data_search = json.loads(data_search)
+    context_search = {
+        'products': data_search
+    }
+
+    return context_search
+    
