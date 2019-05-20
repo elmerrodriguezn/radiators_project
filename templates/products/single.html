@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} | Welcome {% endblock %}
+
+{% block content %}
+<div class="container">
+    {% for detail in details %}
+    <!-- Fields -->
+    <div class="row mb-5 fields">
+        <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item text-secondary">
+                    <i class="fas fa-money-bill-alt"></i> Asking Price:
+                    <span class="float-right">{{detail.name}}</span>
+                </li>
+                <li class="list-group-item text-secondary">
+                    <i class="fas fa-bed"></i> Bedrooms:
+                    <span class="float-right">{{ detail.default_code }}</span>
+                </li>
+                <li class="list-group-item text-secondary">
+                    <i class="fas fa-bath"></i> Bathrooms:
+                    <span class="float-right">{{ detail.x_studio_field_QlEui }}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
