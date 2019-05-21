@@ -120,12 +120,12 @@ def create_lead(fullName, email, phone, description):
     uid,
     password,
    'crm.lead', 'create', [{
-       'name': 'Contacto sitio web',
+       'name': 'Contacto radiators.com.mx',
        'contact_name': fullName,
        'email_from': email,
        'phone': phone,
        'description': description
    }])
 
-    return print('succefull')
+    return print('Operacion exitosa')
     

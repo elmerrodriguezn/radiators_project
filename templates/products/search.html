@@ -1,31 +1,34 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- Listings -->
-<section id="listings" class="py-5">
+<!-- Card custom-->
+<section id="card-custom" class="">
     <div class="container">
-        <h3 class="text-center mb-3">Últimos radiadores</h3>
-        <div class="row">
+        <h3 class="page-title">Resultados para: {{ request.GET.keywords }}</h3>
+
+        <div class="row mt-4">
             {% if products %}
             {% for product in products %}
             <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card listing-preview">
+                <div class="card card-custom">
                     <div class="card-body">
-                        <div class="listing-heading text-center">
-                            <h4 class="text-primary">{{ product.name }}</h4>
+                        <div class="card-custom-heading">
+                            <h4 class="text-primary">{{ product.name|truncatewords:5 }}</h4>
                             <ul class="list-group list-group-flush">
+                                <li class="list-group-item disabled" aria-disabled="true">Números de parte</li>
                                 <li class="list-group-item text-secondary">
-                                    NUMERO DE PARTE MESABI:
-                                    <span class="float-right">{{ product.default_code }}</span>
+                                    Mesabi:
+                                    <span class="">{{ product.default_code }}</span>
                                 </li>
                                 <li class="list-group-item text-secondary">
-                                    NUMERO DE PARTE OEM:
-                                    <span class="float-right">{{ product.x_studio_field_QlEui }}</span>
+                                    OEM:
+                                    <span class="">{{ product.x_studio_field_QlEui }}</span>
                                 </li>
                             </ul>
                         </div>
                         <hr>
-                        <a href="{% url 'single' product.default_code %}" class="btn btn-primary btn-block">Cotizar</a>
+                        <a href="{% url 'single' product.default_code %}" class="btn btn-primary btn-block">Solicitar
+                            cotización</a>
                     </div>
                 </div>
             </div>
