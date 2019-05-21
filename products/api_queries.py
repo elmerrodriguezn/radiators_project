@@ -1,15 +1,6 @@
-import xmlrpc.client
+from api_connection import *
 import json
-
-
-db = "mailync-lymmx-master-43217"
-username = "sistemas"
-password = "Faz21687"
-url = "https://lymmx.odoo.com"
-
-common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(url))
-models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))
-uid = common.authenticate(db, username, password, {})
+from django.shortcuts import redirect
 
 def context():
     raw = models.execute_kw(
@@ -122,4 +113,19 @@ def context_search(q):
     }
 
     return context_search
+
+def create_lead(fullName, email, phone, description):
+    raw_search= models.execute_kw(
+    db,
+    uid,
+    password,
+   'crm.lead', 'create', [{
+       'name': 'Contacto sitio web',
+       'contact_name': fullName,
+       'email_from': email,
+       'phone': phone,
+       'description': description
+   }])
+
+    return print('succefull')
     
