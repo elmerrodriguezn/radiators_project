@@ -17,8 +17,6 @@ def lead(request):
     messages.success(request, 'Gracias por contáctaros, nuestro equipo de ventas se comunicará contigo a la brevedad.')
     return redirect('/productos/'+request.GET.get('mpn', False))
 
-def contact(request):
-    re
 def handler404(request):
     return render(request, 'products/404.html', status=404)
 
