@@ -1,11 +1,11 @@
 {% extends 'base.html' %} {% block title %} | Contacto {% endblock %}
 {% load static %}
 {% block content %}
-<div class="container container-custom mt-4">
-    <h3 class="page-title">Tienes problemas de enfriamiento en tu equipo? Contáctanos seguro tenemos una solución</h3>
+<div class="container container-custom">
+    <h3 class="page-title">¿Tienes problemas de enfriamiento en tu equipo? Contáctanos seguro tenemos una solución</h3>
     <div class="row">
         <div class="col-md-6">
-            <form action="{% url 'lead' %}">
+            <form action="{% url 'send_lead' %}">
                 <div class="form-group">
                     <label for="full-name">Nombre completo:</label>
                     <input type="text" class="form-control" id="full-name" name="fullName" required />

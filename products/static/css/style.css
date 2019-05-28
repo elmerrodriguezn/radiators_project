@@ -6,6 +6,15 @@ body {
   position: relative;
   min-height: 100vh;
 }
+.container-custom {
+  margin: 30px auto 30px auto;
+}
+.devider {
+  margin: 30px auto 30px auto;
+  height: 1px;
+  width: 97%;
+  background-color: #eeeeee;
+}
 /* Navbar */
 .navbar-custom {
   opacity: 0.9;
@@ -13,7 +22,12 @@ body {
   background-color: #CCCC00;
 }
 .main-logo {
-  bottom: auto;
+ display: inline-block;
+}
+#by-text {
+  position: absolute;
+  font-size: 10px;
+  margin-top: 20px;
 }
 .social a {
   margin-right: 0.4rem; 
@@ -34,16 +48,13 @@ body {
   font-size: 20px;
 }
 #main-cover .home-search {
-  min-height: 400px;
   position: relative;
-  border-radius: 5px; 
 }
 #main-cover .overlay {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  min-height: 400px;
   width: 100%;
   background: rgba(64, 64, 64, 0.95);
 }
@@ -112,34 +123,39 @@ body {
 
 /* Card style */
 .card-custom-preview a {
-  position: relative; }
+  position: relative; 
+}
 .card-custom {
   border-radius: 0;
 }
 /* Buttons */
-.btn-search:focus {outline:0;}
 .form-control {
   border-radius: 0;
 }
 .btn-primary {
+  background-color:  #CCCC00;
   color: #000000;
+  font-weight: 600;
   border: none;
   border-radius: 0;
-  background-color:  #CCCC00;
 }
 .btn-primary:hover {
+  background-color: #FFD600;
   color: #000000;
+  font-weight: 600;
   border: none;
   border-radius: 0;
-  background-color: #FFD600;
 }
 .fa-chevron-circle-right, .fa-chevron-circle-left {
   color: #CCCC00;
 }
 /* Search */
+.container-search {
+  margin: 30px 0 30px 0;
+}
+.btn-search:focus {outline:0;}
 .form-search {
-  position: relative;
-  
+  position: relative;  
 }
 .form-control-search {
   border: none;
@@ -154,15 +170,13 @@ body {
   cursor: pointer;
 }
 .fa-search {
-  color: #999900;
-}
-.fa-search:hover {
   color: #CCCC00;
 }
-
+.fa-search:hover {
+  color: #FFD600;
+}
 /* Footer */
 #main-footer {
-  margin-top: 30px;
   bottom: 0;
   background-color: #424242;
 }

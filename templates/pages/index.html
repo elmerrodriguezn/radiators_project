@@ -9,27 +9,28 @@
 <section id="main-cover">
     <div class="container">
         <div class="home-search p-5">
-
             <div class="overlay p-5">
                 <div class="row">
                     <div class="col-md-8">
                         <h1 class="">
                             La solución a tus
-                            problemas de enfriamiento
+                            problemas de enfriamiento <img src="{% static 'img/main-logo.png' %}"
+                                class="img-fluid main-logo">
                         </h1>
-                        <p class="lead">
+
+                        <span>
                             Incomparables, reparables en el sitio de trabajo, cumple requerimientos extremos,
                             desafiantes para
-                            atender las necesidades de la maquinaria pesada: Radiadores <img
-                                src="{% static 'img/main-logo.png' %}" class="img-fluid main-logo" width="80">
-                            Son la solución de enfriamiento y transferencia de calor que las mantienen trabajando por
-                            más
-                            tiempo.
-                            <p>
-                                {% include 'partials/_search_bar.html' %}
+                            atender las necesidades de la maquinaria pesada:
+                            Nuestros radiadores
+                            son la solución de enfriamiento y transferencia de calor que los mantienen trabajando por
+                            más tiempo.
+                        </span>
+                        <div class="container-search">
+                            {% include 'partials/_search_bar.html' %}
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -39,8 +40,8 @@
 {% include 'partials/_alerts.html' %}
 
 <!-- Card custom -->
-<section id="card-custom" class="">
-    <div class="container">
+<section id="card-custom">
+    <div class="container container-custom">
         <h3 class="page-title">Radiadores recientes</h3>
         <div class="row">
             {% if products %}
