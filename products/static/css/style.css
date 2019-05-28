@@ -23,6 +23,7 @@ body {
 }
 .main-logo {
  display: inline-block;
+ margin-bottom: 8px;
 }
 #by-text {
   position: absolute;
