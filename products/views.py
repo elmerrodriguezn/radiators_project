@@ -16,9 +16,3 @@ def lead(request):
     description = 'Producto: ' + request.GET.get('productName', False), 'Número de parte Mesabi: ' + request.GET.get('mpn', False), 'Número de parte OEM: ' + request.GET.get('oempn', False), 'Mensaje: ' + request.GET['msg']
     create_lead(fullName, email, phone, description)
     return redirect('/gracias-por-contactarnos/')
-
-def handler404(request):
-    return render(request, 'products/404.html', status=404)
-
-def handler500(request):
-    return render(request, 'products/500.html', status=500)

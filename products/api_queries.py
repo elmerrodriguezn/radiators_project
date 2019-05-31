@@ -74,7 +74,7 @@ def context_detail(default_code):
     {'fields': ['name', 'default_code', 'x_studio_field_QlEui'] })
 
     context_detail = {
-        "details": data_detail
+        "detail": data_detail[0]
     }
 
     return context_detail

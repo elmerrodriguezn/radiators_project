@@ -1,8 +1,9 @@
-{% extends 'base.html' %} {% block title %} | {{ productos }} {% endblock %}
+{% extends 'base.html' %}
+{% block title %} | {{ detail.name }} {% endblock %}
 {% load static %}
 {% block content %}
+{{ details }}
 <div class="container container-custom">
-  {% for detail in details %}
   <h3 class="page-title">{{ detail.name }}</h3>
   <!-- Fields -->
   <div class="row">
@@ -16,6 +17,5 @@
       {% include 'products/partials/content2.html' %}
     </div>
   </div>
-  {% endfor %}
 </div>
 {% endblock %}
