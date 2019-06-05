@@ -1,50 +1,19 @@
-# Importing this module to bring api variables
+# Importing api_connection from root project to bring api variables
 from api_connection import *
-import json
 from django.shortcuts import redirect
 
-def context():
-    data = models.execute_kw(
-        db,
-        uid,
-        password,
-        'product.template', 'search_read',
-        [[
-            [
-                'type', '=', 'product'
-            ],
-            [
-                'categ_id', '=', 139
-            ],
-            [
-                'x_studio_field_OaF3K', '=', True
-            ]
-        ]],
-        {'fields': ['name', 'default_code', 'x_studio_field_QlEui']})
-
-    context = {
-        "products": data
-    }
-    return context
+# Template function to query api taking arguments
+api_template = lambda model, operation, query='', fields='' : models.execute_kw(db, uid, password, model, operation,[query], fields)
 
 def context_limit():
-    data_limit = models.execute_kw(
-        db,
-        uid,
-        password,
-        'product.template', 'search_read',
-        [[
-            [
-                'type', '=', 'product'
-            ],
-            [
-                'categ_id', '=', 139
-            ],
-            [
-                'x_studio_field_OaF3K', '=', True
-            ]
-        ]],
-        {'fields': ['name', 'default_code', 'x_studio_field_QlEui', 'create_date'], 'limit': 12, 'order': 'create_date'  })
+    # Template api function parameters
+    model = 'product.template'
+    operation = 'search_read'
+    query = [['type', '=', 'product'],['categ_id', '=', 139],['x_studio_field_OaF3K', '=', True]]
+    fields = {'fields': ['name', 'default_code', 'x_studio_field_QlEui', 'create_date'], 'limit': 12, 'order': 'create_date'  }
+
+    # Template api function
+    data_limit = api_template(model, operation, query, fields)
 
     context_limit = {
         "products": data_limit
@@ -52,26 +21,14 @@ def context_limit():
     return context_limit
 
 def context_detail(default_code):
-    data_detail= models.execute_kw(
-    db,
-    uid,
-    password,
-    'product.template', 'search_read',
-    [[
-        [
-            'type', '=', 'product'
-        ],
-        [
-            'categ_id', '=', 139
-        ],
-        [
-            'x_studio_field_OaF3K', '=', True
-        ],
-        [
-            'default_code', '=', default_code
-        ],
-    ]],
-    {'fields': ['name', 'default_code', 'x_studio_field_QlEui'] })
+    # Template api function parameters
+    model = 'product.template'
+    operation = 'search_read'
+    query = [['type', '=', 'product'],['categ_id', '=', 139],['x_studio_field_OaF3K', '=', True],['default_code', '=', default_code]]
+    fields = {'fields': ['name', 'default_code', 'x_studio_field_QlEui'] }
+
+    # Template api function
+    data_detail= api_template(model, operation, query, fields)
 
     context_detail = {
         "detail": data_detail[0]
@@ -80,44 +37,15 @@ def context_detail(default_code):
     return context_detail
 
 def context_search(q):
-    data_search= models.execute_kw(
-    db,
-    uid,
-    password,
-   'product.template', 'search_read',
-    [[
-        [
-            'type', '=', 'product'
-        ],
-        [
-            'categ_id', '=', 139
-        ],
-        [
-            'x_studio_field_OaF3K', '=', True
-        ],
-        ['name','ilike', q],
-    ]],
-    {'fields': ['name', 'default_code', 'x_studio_field_QlEui'], 'limit': 12 })
-    if not data_search:
-        data_search= models.execute_kw(
-        db,
-        uid,
-        password, 'product.template', 'search_read',
-        [[
-            [
-                'type', '=', 'product'
-            ],
-            [
-                'categ_id', '=', 139
-            ],
-            [
-                'x_studio_field_OaF3K', '=', True
-            ],
-            [
-                'x_studio_field_QlEui', 'ilike', q
-            ]
-        ]],
-        {'fields': ['name', 'default_code', 'x_studio_field_QlEui'] })
+    # Template api function parameters
+    model = 'product.template'
+    operation = 'search_read'
+    # Query accepting q parameter requested in the view
+    query = [['type', '=', 'product'],['categ_id', '=', 139],['x_studio_field_OaF3K', '=', True],['x_studio_field_OaF3K','ilike', q]]
+    fields = {'fields': ['name', 'default_code', 'x_studio_field_QlEui'], 'limit': 12 }
+    
+    # Template api function
+    data_search = api_template(model, operation, query, fields)
 
     context_search = {
         'products': data_search
@@ -126,17 +54,20 @@ def context_search(q):
     return context_search
 
 def create_lead(fullName, email, phone, description):
-    models.execute_kw(
-    db,
-    uid,
-    password,
-   'crm.lead', 'create', [{
-       'name': 'Contacto radiators.com.mx',
+    # Template api function parameters
+    model = 'crm.lead'
+    operation = 'create'
+    # Query accepting q parameter requested in the view
+    query = {
+       'name': 'radiadores-mesabi.com.mx',
        'contact_name': fullName,
        'email_from': email,
        'phone': phone,
-       'description': description
-   }])
+       'description': description 
+       }
+    
+    # Template api function
+    api_template(model, operation, query)
 
     return print('Operacion exitosa')
 
