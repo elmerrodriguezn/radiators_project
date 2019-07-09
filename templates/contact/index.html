@@ -5,7 +5,8 @@
     <h3 class="page-title">¿Tienes problemas de enfriamiento en tu equipo? Contáctanos seguro tenemos una solución</h3>
     <div class="row">
         <div class="col-md-6">
-            <form action="{% url 'send_lead' %}">
+            <form action="{% url 'send_lead' %}" method="POST">
+                {% csrf_token %}
                 <div class="form-group">
                     <label for="full-name">Nombre completo:</label>
                     <input type="text" class="form-control" id="full-name" name="fullName" required />
@@ -24,6 +25,12 @@
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Enviar</button>
             </form>
+        </div>
+        <div class="col-md-6">
+            <iframe
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flymmexico&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                width="100%" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowTransparency="true" allow="encrypted-media"></iframe>
         </div>
     </div>
 </div>

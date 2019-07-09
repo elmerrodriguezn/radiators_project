@@ -1,4 +1,5 @@
-<form action="{% url 'product_lead' %}">
+<form action="{% url 'product_lead' %}" method="POST">
+    {% csrf_token %}
     <p>Completa la información para que nuestro equipo de ingenieros te ayuden a resolver tus problemas de transferencia
         de calor.</p>
     <div class="form-group">

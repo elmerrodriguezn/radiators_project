@@ -6,9 +6,9 @@ def contact(request):
     return render(request, 'contact/index.html')
 
 def send_lead(request):
-    fullName = request.GET.get('fullName', False)
-    email = request.GET.get('email', False)
-    phone = request.GET.get('phone', False)
-    msg = request.GET.get('msg', False)
+    fullName = request.POST['fullName']
+    email = request.POST['email']
+    phone = request.POST['phone']
+    msg = request.POST['msg']
     create_lead(fullName, email, phone, msg)
     return redirect('/gracias-por-contactarnos/')
