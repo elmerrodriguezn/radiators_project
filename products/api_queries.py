@@ -41,7 +41,7 @@ def context_search(q):
     model = 'product.template'
     operation = 'search_read'
     # Query accepting q parameter requested in the view
-    query = [['type', '=', 'product'],['categ_id', '=', 139],['x_studio_field_OaF3K', '=', True],['x_studio_field_OaF3K','ilike', q]]
+    query = [['type', '=', 'product'],['categ_id', '=', 139],['x_studio_field_OaF3K', '=', True],['x_studio_field_QlEui','ilike', q]]
     fields = {'fields': ['name', 'default_code', 'x_studio_field_QlEui'], 'limit': 12 }
     
     # Template api function
@@ -69,6 +69,6 @@ def create_lead(fullName, email, phone, description):
     # Template api function
     api_template(model, operation, query)
 
-    return print('Operacion exitosa')
+    pass
 
 

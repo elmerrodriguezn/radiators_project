@@ -1,5 +1,4 @@
 from api_connection import *
-import json
 from django.shortcuts import redirect
 
 # Template function to query api taking two arguments
@@ -20,6 +19,5 @@ def create_lead(fullName, email, phone, msg):
     
     # Template api function
     api_template(model, operation, query)
-
-    return print('envio exitoso')
+    pass
     
