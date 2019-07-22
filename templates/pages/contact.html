@@ -3,9 +3,10 @@
 {% block title %} | Contacto {% endblock %}
 {% block content %}
 <div class="container container-custom">
-    <h3 class="page-title">¿Tienes problemas de enfriamiento en tu equipo? Contáctanos seguro tenemos una solución</h3>
     <div class="row">
         <div class="col-md-6">
+            <h3 class="page-title">¿Tienes problemas de enfriamiento en tu equipo? Contáctanos seguro tenemos una
+                solución</h3>
             <form action="{% url 'send_lead' %}" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
