@@ -1,0 +1,22 @@
+% extends "base.html" %}
+{% load static %}
+{% block title %} | Todos los productos {% endblock %}
+{% block content%}
+<div class="container container-custom">
+    <div class="row">
+        {% if products %}
+        {% for product in products %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            {% include 'products/partials/_card.html' %}
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="col-md-6">
+            <p>No se econtráron números de parte</p>
+            {% include 'products/forms/contact.html' %}
+        </div>
+        {% endif %}
+    </div>
+    {% include 'products/partials/pagination.html' %}
+</div>
+{% endblock %}

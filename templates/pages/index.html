@@ -1,11 +1,7 @@
 {% extends 'base.html' %}
-
 {% load static %}
-
 {% block title %} | La solución a tus problemas de enfriamiento {% endblock %}
-
 {% block content %}
-<!-- Main cover -->
 <section id="main-cover">
     <div class="container">
         <div class="home-search p-5">
@@ -42,27 +38,7 @@
             {% if products %}
             {% for product in products %}
             <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card card-custom">
-                    <div class="card-body">
-                        <div class="card-custom-heading">
-                            <h4 class="text-primary">{{ product.name|truncatewords:5 }}</h4>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item disabled" aria-disabled="true">Números de parte</li>
-                                <li class="list-group-item text-secondary">
-                                    Mesabi:
-                                    <span class="">{{ product.default_code }}</span>
-                                </li>
-                                <li class="list-group-item text-secondary">
-                                    OEM:
-                                    <span class="">{{ product.x_studio_field_QlEui }}</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <hr>
-                        <a href="{% url 'single' product.default_code %}" class="btn btn-primary btn-block">Solicitar
-                            cotización</a>
-                    </div>
-                </div>
+                {% include 'products/partials/_card.html' %}
             </div>
             {% endfor %}
             {% else %}

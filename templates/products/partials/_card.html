@@ -1,0 +1,21 @@
+<div class="card card-custom">
+    <div class="card-body">
+        <div class="card-custom-heading">
+            <h4 class="text-primary">{{ product.name|truncatewords:5 }}</h4>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item disabled" aria-disabled="true">Números de parte</li>
+                <li class="list-group-item text-secondary">
+                    Mesabi:
+                    <span>{{ product.default_code }}</span>
+                </li>
+                <li class="list-group-item text-secondary">
+                    OEM:
+                    <span>{{ product.x_studio_field_QlEui }}</span>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <a href="{% url 'single' product.default_code %}" class="btn btn-primary-custom btn-block">Solicitar
+            cotización</a>
+    </div>
+</div>

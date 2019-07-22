@@ -119,14 +119,14 @@ body {
 .form-control {
   border-radius: 0;
 }
-.btn-primary {
+.btn-primary-custom {
   background-color:  #CCCC00;
   color: #000000;
   font-weight: 600;
   border: none;
   border-radius: 0;
 }
-.btn-primary:hover {
+.btn-primary-custom:hover {
   background-color: #FFD600;
   color: #000000;
   font-weight: 600;

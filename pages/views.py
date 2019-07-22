@@ -1,6 +1,19 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from products.api_queries import context_limit
+from django.shortcuts import render, redirect
+from api.queries import *
 
 def index(request):
     return render(request, 'pages/index.html', context_limit())
+
+def contact(request):
+    return render(request, 'pages/contact.html')
+
+def send_lead(request):
+    fullName = request.POST['fullName']
+    email = request.POST['email']
+    phone = request.POST['phone']
+    msg = request.POST['msg']
+    create_lead(fullName, email, phone, msg)
+    return redirect('/gracias-por-contactarnos/')
+    
+def thanks(request):
+    return render(request, 'pages/thanks.html')
