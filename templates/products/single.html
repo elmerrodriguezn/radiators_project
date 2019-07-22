@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
-{% block title %} | {{ detail.name }} {% endblock %}
 {% load static %}
+{% block title %} | {{ detail.name }} {% endblock %}
 {% block content %}
 <div class="container container-custom">
   <h3 class="page-title">{{ detail.name }}</h3>
   <!-- Fields -->
   <div class="row">
     <div class="col-md-7">
-      {% include 'products/partials/content1.html' %}
+      {% include 'products/partials/_content1.html' %}
     </div>
     <div class="col-md-5">
-      {% include 'products/partials/form-single.html' %}
+      {% include 'products/partials/form/_products.html' %}
     </div>
     <div class="col-md-12 mt-4">
-      {% include 'products/partials/content2.html' %}
+      {% include 'products/partials/_content2.html' %}
     </div>
   </div>
 </div>
