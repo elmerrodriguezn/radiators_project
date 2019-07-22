@@ -10,7 +10,7 @@ def context(page):
     # Template api function parameters
     model = 'product.template'
     operation = 'search_read'
-    query = [['type', '=', 'product'],['categ_id', '=', 153],['x_studio_field_OaF3K', '=', True]]
+    query = [['type', '=', 'product'],['categ_id', '=', 139],['x_studio_field_OaF3K', '=', True]]
     fields = {'fields': ['name', 'default_code', 'x_studio_field_QlEui', 'create_date'], 'order': 'create_date'  }
 
     # Template api function
@@ -30,7 +30,7 @@ def context_limit():
     # Template api function parameters
     model = 'product.template'
     operation = 'search_read'
-    query = [['type', '=', 'product'],['categ_id', '=', 153],['x_studio_field_OaF3K', '=', True]]
+    query = [['type', '=', 'product'],['categ_id', '=', 139],['x_studio_field_OaF3K', '=', True]]
     fields = {'fields': ['name', 'default_code', 'x_studio_field_QlEui', 'create_date'], 'limit': 12, 'order': ''  }
 
     # Template api function
@@ -45,7 +45,7 @@ def context_detail(default_code):
     # Template api function parameters
     model = 'product.template'
     operation = 'search_read'
-    query = [['type', '=', 'product'],['categ_id', '=', 153],['x_studio_field_OaF3K', '=', True],['default_code', '=', default_code]]
+    query = [['type', '=', 'product'],['categ_id', '=', 139],['x_studio_field_OaF3K', '=', True],['default_code', '=', default_code]]
     fields = {'fields': ['name', 'default_code', 'x_studio_field_QlEui'] }
 
     # Template api function
@@ -63,7 +63,7 @@ def context_search(q):
     model = 'product.template'
     operation = 'search_read'
     # Query accepting q parameter requested in the view
-    query = [['type', '=', 'product'],['categ_id', '=', 153],['x_studio_field_OaF3K', '=', True],['name','ilike', q]]
+    query = [['type', '=', 'product'],['categ_id', '=', 139],['x_studio_field_OaF3K', '=', True],['x_studio_field_QlEui','ilike', q]]
     #x_studio_field_QlEui
     fields = {'fields': ['name', 'default_code', 'x_studio_field_QlEui'], 'limit': 12 }
     

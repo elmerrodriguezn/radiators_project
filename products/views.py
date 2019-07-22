@@ -10,7 +10,7 @@ def single(request, default_code):
 
 def search(request):
     q = request.GET['q']
-    return render(request, 'search/index.html', context_search(q))
+    return render(request, 'products/search.html', context_search(q))
 
 def lead(request):
     fullName = request.POST['fullName']
