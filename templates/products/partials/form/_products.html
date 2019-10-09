@@ -4,19 +4,19 @@
         de calor.</p>
     <div class="form-group">
         <label for="name">Producto:</label>
-        <input type="text" class="form-control" id="name" name="productName" value="{{ detail.name }}" />
+        <input type="text" class="form-control" id="name" name="product_name" value="{{ product.name }}" />
     </div>
     <div class="form-group">
         <label for="mpn">Número de parte Mesabi:</label>
-        <input type="text" class="form-control" id="mpn" name="mpn" value="{{ detail.default_code }}" />
+        <input type="text" class="form-control" id="mpn" name="mpn" value="{{ product.default_code }}" />
     </div>
     <div class="form-group">
         <label for="oempn">Número de parte OEM:</label>
-        <input type="text" class="form-control" id="oempn" name="oempn" value="{{ detail.x_studio_field_QlEui }}" />
+        <input type="text" class="form-control" id="oempn" name="oempn" value="{{ product.x_studio_field_QlEui }}" />
     </div>
     <div class="form-group">
         <label for="full-name">Nombre completo:</label>
-        <input type="text" class="form-control" id="full-name" name="fullName" required />
+        <input type="text" class="form-control" id="full-name" name="full_name" required />
     </div>
     <div class="form-group">
         <label for="email">Correo electrónico:</label>

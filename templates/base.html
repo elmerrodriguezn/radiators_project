@@ -3,6 +3,10 @@
 <html lang="es-mx">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    {% include 'partials/_google_analitics.html' %}
+    <!-- reCAPTCHA v3-->
+    {% include 'partials/_recaptcha.html' %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -20,15 +24,6 @@
     <!-- Odoo Chat -->
     <link rel="stylesheet" href="https://lymmx.odoo.com/im_livechat/external_lib.css" />
     <title>Radiadores Mesabi&copy; {% block title %}{% endblock %}</title>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92798008-5"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-92798008-5');
-    </script>
 </head>
 
 <body>

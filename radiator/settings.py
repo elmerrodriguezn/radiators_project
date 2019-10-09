@@ -25,7 +25,7 @@ SECRET_KEY = "y^%90@y)qcp4dhodqloyv__m!+z*@en)od6wxy57)h7zx+#$#9"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -120,6 +120,8 @@ STATICFILES_DIRS = (
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+GOOGLE_RECAPTCHA_SECRET_KEY = '_SECRET_KEY_'
 
 try:
     from .local_settings import *

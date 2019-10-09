@@ -1,5 +1,10 @@
-<form action="?" method="POST">
-    <div class="g-recaptcha" data-sitekey="6LdPJaUUAAAAABzK6wTlwrshE7oUNAq038qjM9Ux"></div>
-    <br />
-    <input type="submit" value="Submit">
-</form>
+<script src='https://www.google.com/recaptcha/api.js?render=6LdPJaUUAAAAABzK6wTlwrshE7oUNAq038qjM9Ux'></script>
+<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6LdPJaUUAAAAABzK6wTlwrshE7oUNAq038qjM9Ux', {action: 'radiadoresmesabi'})
+        .then(function(token) {
+        let recaptchaResponse = document.getElementById('recaptchaResponse');
+        recaptchaResponse.value = token;
+        });
+    });
+</script>
