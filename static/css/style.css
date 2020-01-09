@@ -1,7 +1,6 @@
 /* Global style */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #1d2124;
 }
 #main-container {
   position: relative;
@@ -37,7 +36,8 @@ body {
 }
 /* Main cover */
 #main-cover {
-  background: url(../img/banner2.jpg) no-repeat top center fixed/cover;
+  background: url('../img/banner2.jpg') no-repeat top center;
+  background-size: cover;
   position: relative;
   min-height: 100vh;
   color: #fff;
@@ -150,7 +150,7 @@ body {
   width: 100%;
 }
 .form-search .btn-search {
-  background-color: transparent;
+  background-color: #ffffff;
   border: none;
   position: absolute;
   right: 10px;
